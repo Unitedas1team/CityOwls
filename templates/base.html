@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en" class="bg-primary ">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>城市守望者</title>
+    <link rel="shortcut icon" href="{{ url_for('static',filename='favicon.ico') }}">
+    <link rel="stylesheet" href="{{ url_for('static',filename='css/bootstrap.min.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static',filename='css/style.css') }}">
+</head>
+<body class="bg-primary ">
+<header>
+    {% block head %}
+    <div class="container-lg ">
+        <div class="mt-lg-5 pt-lg-3">
+            <div class="col-md mt-lg-5 ">
+                <h1 class="text-bg-primary text-center">城市守望者</h1>
+            </div>
+            <div class="text-center">
+                <img id="logo-img" src="{{ url_for('get_image',filename='owl.png') }}"
+                     class="rounded img-fluid m-auto center-block"
+                     alt="此处应有图片">
+            </div>
+        </div>
+
+    </div>
+{% endblock head %}
+</header>
+
+<main>
+    {% block content %}
+    <div class="container-lg bg-primary ">
+        <div class="row mt-5">
+            <div class="col-md text-center  pt-lg-3 bg-info">
+                <a class="text-decoration-none" href="{{url_for('login')}}">
+                    <img src="{{ url_for('get_image',filename='patrol.png') }}" class="rounded img-fluid mt-lg-2"
+                         alt="此处应有图片">
+                    <h2 class="text-bg-primary text-center mt-lg-2 bg-info">巡检</h2>
+                </a>
+            </div>
+            <div class="col-md  text-center  pt-lg-3 bg-success">
+                <a class="text-decoration-none" href="{{url_for('weather')}}">
+                    <img src="{{ url_for('get_image',filename='weather.png') }}" class="rounded img-fluid mt-lg-2"
+                         alt="此处应有图片">
+                    <h2 class="text-bg-primary text-center mt-lg-2 bg-success ">气象</h2>
+                </a>
+            </div>
+            <div class="col-md  text-center  pt-lg-3 bg-warning">
+                <a class="text-decoration-none" href="{{url_for('monitor',advtype='picture')}}">
+                    <img src="{{ url_for('get_image',filename='monitor.png') }}" class="rounded img-fluid mt-lg-2"
+                         alt="此处应有图片">
+                    <h2 class="text-bg-primary text-center mt-lg-2 bg-warning">监控</h2>
+                </a>
+            </div>
+            <div class="col-md text-center  pt-lg-3 bg-dark">
+                <a class="text-decoration-none" href="{{url_for('advertise',advtype='picture')}}">
+                    <img src="{{ url_for('get_image',filename='adv.png') }}" class="rounded img-fluid mt-lg-2"
+                         alt="此处应有图片">
+                    <h2 class="text-bg-primary text-center mt-lg-2 bg-dark">广告</h2>
+                </a>
+            </div>
+        </div>
+    </div>
+    {% endblock content %}
+
+</main>
+
+<script type="text/javascript" src="{{ url_for('static',filename='js/jquery-3.6.0.min.js') }}"></script>
+<script type="text/javascript" src="{{ url_for('static',filename='js/popper.min.js') }}"></script>
+<script type="text/javascript" src="{{ url_for('static',filename='js/bootstrap.min.js') }}"></script>
+<script type="text/javascript" src="{{ url_for('static',filename='js/script.js') }}"></script>
+<script type="text/javascript">
+    var csrf_token = "{{ csrf_token() }}";
+
+</script>
+</body>
+</html>

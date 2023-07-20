@@ -1,0 +1,63 @@
+{% extends 'base.html' %}
+{% block head %}
+{% endblock  %}
+{% block content %}
+<div class="container-lg bg-primary " id="weather-container" data-href="{{url_for('update_weather')}}">
+    <div class="row mt-5">
+        <h1 id="weather-title" class="text-bg-primary text-center">守望者ID001</h1>
+        <div class="col-md text-center  pt-lg-5 pb-lg-5 m-lg-2 bg-gradient">
+
+            <img src="{{ url_for('get_image',filename='temperature.png') }}" class="rounded img-fluid mt-lg-2"
+                 alt="此处应有图片">
+            <h2 class="text-bg-primary text-center mt-lg-4 bg-opacity-25">温度</h2>
+            <h2 id="tmp-value" class="text-bg-primary text-center mt-lg-4 bg-opacity-25"
+                data-href="{{url_for('update_weather')}}"></h2>
+
+        </div>
+        <div class="col-md  text-center  pt-lg-5 pb-lg-5 m-lg-2 bg-gradient">
+
+            <img src="{{ url_for('get_image',filename='illumination.png') }}" class="rounded img-fluid mt-lg-2"
+                 alt="此处应有图片">
+            <h2 class="text-bg-primary text-center mt-lg-4 bg-opacity-25 ">光照度</h2>
+            <h2 id="illu-value" class="text-bg-primary text-center mt-lg-4 bg-opacity-25 "></h2>
+
+        </div>
+        <div class="col-md  text-center  pt-lg-5 pb-lg-5 m-lg-2 bg-gradient">
+
+            <img src="{{ url_for('get_image',filename='noise.png') }}" class="rounded img-fluid mt-lg-2"
+                 alt="此处应有图片">
+            <h2 class="text-bg-primary text-center mt-lg-4 bg-opacity-25">噪声</h2>
+            <h2 id="noise-value" class="text-bg-primary text-center mt-lg-4 bg-opacity-25 "></h2>
+
+        </div>
+
+    </div>
+</div>
+<div class="container-lg bg-primary ">
+    <div class="row">
+        <div class="col-md text-center  pt-lg-5 pb-lg-5 m-lg-2 bg-gradient">
+
+            <img src="{{ url_for('get_image',filename='humidity.png') }}" class="rounded img-fluid mt-lg-2"
+                 alt="此处应有图片">
+            <h2 class="text-bg-primary text-center mt-lg-4 bg-opacity-25">湿度</h2>
+            <h2 id="humi-value" class="text-bg-primary text-center mt-lg-4 bg-opacity-25 "></h2>
+        </div>
+        <div class="col-md  text-center  pt-lg-5 pb-lg-5 m-lg-2 bg-gradient">
+
+            <img src="{{ url_for('get_image',filename='windVelocity.png') }}" class="rounded img-fluid mt-lg-2"
+                 alt="此处应有图片">
+            <h2 class="text-bg-primary text-center mt-lg-4 bg-opacity-25 ">风速</h2>
+            <h2 id="wind-value" class="text-bg-primary text-center mt-lg-4 bg-opacity-25 "></h2>
+        </div>
+        <div class="col-md  text-center  pt-lg-5 pb-lg-5 m-lg-2 bg-gradient">
+
+            <img src="{{ url_for('get_image',filename='PM2.5.png') }}" class="rounded img-fluid mt-lg-2"
+                 alt="此处应有图片">
+            <h2 class="text-bg-primary text-center mt-lg-4 bg-opacity-25">PM2.5</h2>
+            <h2 id="pm25-value" class="text-bg-primary text-center mt-lg-4 bg-opacity-25 "></h2>
+        </div>
+
+    </div>
+</div>
+
+{% endblock content %}

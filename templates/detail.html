@@ -1,0 +1,46 @@
+{% extends 'base.html' %}
+{% block head %}
+{% endblock  %}
+{% block content %}
+<div class="container-sm">
+
+    <a class="row-cols mt-sm-5  text-decoration-none" href="{{url_for('selectrecords')}}">
+            <div class="col-md ">
+            {% if record.ths  %}
+            <h2 class="text-bg-primary text-center mt-lg-2 bg-success ">温湿度传感器</h2>
+            {% else %}
+            <h2 class="text-bg-primary text-center mt-lg-2 bg-danger ">温湿度传感器</h2>
+            {% endif %}
+            {% if record.ils  %}
+            <h2 class="text-bg-primary text-center mt-lg-2 bg-success ">光照度传感器</h2>
+            {% else %}
+            <h2 class="text-bg-primary text-center mt-lg-2 bg-danger ">光照度传感器</h2>
+            {% endif %}
+            {% if record.wss  %}
+            <h2 class="text-bg-primary text-center mt-lg-2 bg-success ">风速传感器</h2>
+            {% else %}
+            <h2 class="text-bg-primary text-center mt-lg-2 bg-danger ">风速传感器</h2>
+            {% endif %}
+            {% if record.nos  %}
+            <h2 class="text-bg-primary text-center mt-lg-2 bg-success ">噪声传感器</h2>
+            {% else %}
+            <h2 class="text-bg-primary text-center mt-lg-2 bg-danger ">噪声传感器</h2>
+            {% endif %}
+            {% if record.pms  %}
+            <h2 class="text-bg-primary text-center mt-lg-2 bg-success ">PM2.5传感器</h2>
+            {% else %}
+            <h2 class="text-bg-primary text-center mt-lg-2 bg-danger ">PM2.5传感器</h2>
+            {% endif %}
+            {% if record.ltm  %}
+            <h2 class="text-bg-primary text-center mt-lg-2 bg-success ">路灯</h2>
+            {% else %}
+            <h2 class="text-bg-primary text-center mt-lg-2 bg-danger ">路灯</h2>
+            {% endif %}
+
+        </div>
+
+
+    </a>
+</div>
+
+{% endblock content %}

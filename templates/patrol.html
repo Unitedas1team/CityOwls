@@ -1,0 +1,42 @@
+{% extends 'base.html' %}
+{% block content %}
+    <div class="container-sm bg-primary  ">
+        <div class="row mt-5   ">
+            <div class="col-sm text-center  pt-lg-3 bg-warning">
+                <a class="text-decoration-none" href="{{url_for('inspection')}}">
+                    <img src="{{ url_for('get_image',filename='exception.png') }}" class="rounded img-fluid mt-lg-2"
+                         alt="此处应有图片">
+                    <h4 class="text-bg-primary text-center mt-lg-2 bg-warning">异常</h4>
+                </a>
+            </div>
+            <div class="col-sm  text-center  pt-lg-3 bg-success">
+                <a class="text-decoration-none" href="{{url_for('repair')}}">
+                    <img src="{{ url_for('get_image',filename='repair.png') }}" class="rounded img-fluid mt-lg-2"
+                         alt="此处应有图片">
+                    <h4 class="text-bg-primary text-center mt-lg-2 bg-success ">维修</h4>
+                </a>
+            </div>
+            <div class="col-sm  text-center  pt-lg-3 bg-info">
+                <a class="text-decoration-none" href="{{url_for('selectrecords')}}">
+                    <img src="{{ url_for('get_image',filename='search.png') }}" class="rounded img-fluid mt-lg-2"
+                         alt="此处应有图片">
+                    <h4 class="text-bg-primary text-center mt-lg-2 bg-info">查询</h4>
+                </a>
+            </div>
+            <div class="col-sm text-center  pt-lg-3 {{bgcolor}}">
+                <a class="text-decoration-none" href="{{url_for('turnlight')}}">
+                    <img src="{{ url_for('get_image',filename='LED.png') }}" class="rounded img-fluid mt-lg-2"
+                         alt="此处应有图片">
+                    <h4 class="text-bg-primary text-center mt-lg-2 {{bgcolor}}">路灯</h4>
+                </a>
+            </div>
+             <div class="col-sm text-center  pt-lg-3 bg-dark">
+                <a class="text-decoration-none" href="{{url_for('logout')}}">
+                    <img src="{{ url_for('get_image',filename='logout.png') }}" class="rounded img-fluid mt-lg-2"
+                         alt="此处应有图片">
+                    <h4 class="text-bg-primary text-center mt-lg-2 bg-dark">登出</h4>
+                </a>
+            </div>
+        </div>
+    </div>
+{% endblock %}

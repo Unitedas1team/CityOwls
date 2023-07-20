@@ -1,0 +1,54 @@
+{% extends 'base.html' %}
+{% block head %}
+{% endblock  %}
+{% block content %}
+<div class="container ">
+    <div class="col-md-8 mx-auto mt-lg-3  ">
+
+        <div>
+            <div class="float-start row">
+                <a class="col-4 " href="{{url_for('patrol')}}">
+                    <img src="{{ url_for('get_image',filename='backs.png') }}" class="rounded img-fluid mr-lg-2"
+                         alt="此处应有图片">
+                </a>
+                <div class="col-8 mt-lg-1 p-0 text-center  ">{{ records|length }} 条{{recordtype}}记录
+                    <small class="float-right">
+                        <a href="#bottom" title="Go Bottom">&darr;</a>
+                    </small>
+                </div>
+            </div>
+
+
+            <form class="d-flex justify-content-end" method="post" action="{{ url_for('selectrecords') }}">
+                <input type="hidden" name="csrf_token" value="{{ csrf_token() }}">
+                <select class="form-select" id="exampleSelect1" name="opvalue">
+                    <option selected>选择查询内容</option>
+                    <option value="1">巡检记录</option>
+                    <option value="2">异常记录</option>
+                    <option value="3">维修记录</option>
+                </select>
+
+                <button class="btn btn-secondary my-2 my-sm-0 ml-auto" type="submit" id="searchsubmit">查询</button>
+            </form>
+        </div>
+
+        <div class="list-group">
+            {% for record in records %}
+            <a class="list-group-item list-group-item-action flex-column" href="{{ url_for('showrecord',rtype=rtype,rid=record.id) }}">
+                <div class="d-flex w-100 justify-content-between">
+
+
+                    <small class="text-primary"> #{{ loop.revindex }}</small>
+                    <h6 class="mb-1 text-primary">{{ record.user.name }}</h6>
+                    <small class="text-primary">
+                        {{ record.datestring }}
+                    </small>
+                </div>
+
+
+            </a>
+            {% endfor %}
+        </div>
+    </div>
+</div>
+{% endblock content %}

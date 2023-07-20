@@ -1,0 +1,49 @@
+{% extends 'base.html' %}
+{% block head %}
+<div class="container-lg ">
+    <div class="mt-lg-5 pt-lg-3">
+        {% if advtype == 'picture' %}
+        <div class="text-center">
+            <img id="adv-img" src="{{ url_for('get_image',filename='orange.jpg') }}"
+                 class="rounded img-fluid m-auto center-block"
+                 alt="此处应有图片">
+        </div>
+        {% else %}
+        <div class="text-center">
+            <video id="adv-video" src="{{url_for('videomp4')}}" type="video/mp4" autoplay loop
+                   controls="controls"></video>
+        </div>
+        {% endif %}
+    </div>
+
+</div>
+{% endblock head %}
+{% block content %}
+<div class="container-lg bg-primary ">
+    <div class="row mt-2">
+        <div class="col-md text-center  pt-lg-2 pb-lg-5 m-lg-2 bg-gradient">
+            <a class="text-decoration-none" href="{{url_for('index')}}">
+                <img src="{{ url_for('get_image',filename='home2.png') }}" class="rounded img-fluid mt-lg-2"
+                     alt="此处应有图片">
+                <h4 class="text-bg-primary text-center mt-lg-2 bg-opacity-25">首页</h4>
+            </a>
+        </div>
+        <div class="col-md text-center  pt-lg-2 pb-lg-5 m-lg-2 bg-gradient">
+            <a class="text-decoration-none" href="{{url_for('advertise',advtype='picture')}}">
+                <img src="{{ url_for('get_image',filename='picture.png') }}" class="rounded img-fluid mt-lg-2"
+                     alt="此处应有图片">
+                <h4 class="text-bg-primary text-center mt-lg-2 bg-opacity-25">图片</h4>
+            </a>
+        </div>
+        <div class="col-md  text-center  pt-lg-2 pb-lg-5 m-lg-2 bg-gradient">
+            <a class="text-decoration-none" href="{{url_for('advertise',advtype='video')}}">
+                <img src="{{ url_for('get_image',filename='video.png') }}" class="rounded img-fluid mt-lg-2"
+                     alt="此处应有图片">
+                <h4 class="text-bg-primary text-center mt-lg-2 bg-opacity-25 ">视频</h4>
+            </a>
+        </div>
+
+
+    </div>
+</div>
+{% endblock %}

@@ -1,0 +1,61 @@
+html,body {
+    height: 100%;
+}
+main{
+
+}
+.page-header {
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+.headline-title{
+    width: fit-content;
+}
+#logo-img{
+    width: 20%;
+    height: auto;
+}
+.extra-link h2{
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+}
+.subtitle-text-h2{
+    text-decoration: none;
+}
+#adv-img{
+    width: 800px;
+    height: auto;
+}
+#adv-video{
+    width: 800px;
+    height: auto;
+}
+.imgframe{
+    height: 40px;
+    margin: 0;
+    padding: 0;
+}
+.thumbimg{
+    width: auto;
+    height: auto;
+    max-width: 100%;
+    max-height: 100%;
+    margin: 0;
+    padding:0;
+}
+
+#exampleSelect1{
+    text-align: center;
+    width: 300px;
+}
+#searchsubmit{
+    width: 200px;
+}
+
+.form-select{
+    display: inline-block;
+}
+footer {
+    
+}
